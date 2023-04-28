@@ -10,9 +10,11 @@ def err_exit():
 
 def err_record():
   with open('errlog.txt', 'w') as f:
-    f.write('/n'.join(config.ERRLOG))
+    for line in config.ERRLOG:
+      f.write(line + "\n")
 
 
 def event_log_maintain(message):
-  config.EVENTLOG.append(f"[{datetime_to_string()}] - {message}")
-  print(f"[{datetime_to_string()}] - {message}")
+  pass
+  # config.EVENTLOG.append(f"[{datetime_to_string()}] - {message}")
+  # print(f"[{datetime_to_string()}] - {message}")
